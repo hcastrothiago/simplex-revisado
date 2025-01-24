@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX Converter</title>
+    <!-- Adiciona MathJax -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #output {
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simplex Revisado</h1>
+    <p>Insira a função objetiva abaixo</p>
+    <textarea name="funcao_objetiva" id="funcao_objetiva" placeholder="ex: Max\;x_1 + x_2">Max\;x_1 + x_2</textarea>
+    <p>Insira as restrições</p>
+    <textarea name="restricoes" id="restricoes"></textarea>
+
+    <textarea id="inputArea" placeholder="Escreva em LaTeX ex.: \\frac{a}{b}"></textarea>
+    <div id="output"></div>
+
+    <script>
+        const inputArea = document.getElementById("inputArea");
+        const output = document.getElementById("output");
+
+        inputArea.addEventListener("input", () => {
+            // Obter o conteúdo digitado e dividir por linhas
+            const lines = inputArea.value.split("\n");
+
+            // Limpar o conteúdo anterior
+            output.innerHTML = "";
+
+            // Processar cada linha individualmente
+            lines.forEach(line => {
+                if (line.trim() !== "") {
+                    const div = document.createElement("div");
+                    div.className = "latex-line";
+                    div.innerHTML = `$$${line}$$`;
+                    output.appendChild(div);
+                }
+            });
+
+            // Re-renderizar usando MathJax
+            MathJax.typesetPromise([output]).catch((err) => console.error(err));
+        });
+    </script>
+</body>
+</html>

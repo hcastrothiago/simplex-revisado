@@ -1,0 +1,19 @@
+{
+  "name": "simplex-revisado",
+  "version": "1.0.0",
+  "description": "atividade simplex revisado como parte da nota de Programacao Linear",
+  "license": "ISC",
+  "author": "Heraclito Thiago",
+  "main": "server.js",
+  "scripts": {
+    "server": "cls & node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "server": "^1.0.41"
+  },
+  "type": "module"
+}

@@ -1,0 +1,14 @@
+.latex-preview {
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+}
+
+.latex-line {
+    display: block; 
+    margin-bottom: 0.5rem;
+}

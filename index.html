@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de PPL</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+
+    <script src="./public/js/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+
+<body>
+    <div class="container my-4">
+        <h1 class="mb-4 text-uppercase">Resolução de PPL
+            <small class="text-body-secondary">Simplex Revisado</small>
+        </h1>
+
+        <!-- Função Objetivo -->
+        <div class="row mb-3">
+            <div class="col">
+                <label for="funcaoObjetivo">Função Objetivo LaTex:</label>
+                <textarea class="form-control p-2" name="funcaoObjetivo" id="funcaoObjetivo"
+                    placeholder="2x1 + 3x2 - 4x3" rows="2">2x_1 + 3x_2 + 4x_3</textarea>
+            </div>
+            <div class="col d-flex flex-column">
+                <label> &nbsp; </label>
+                <div class="latex-preview bg-white h-100" id="LaTexFO"> &nbsp; </div>
+            </div>
+        </div>
+
+        <!-- Restrições -->
+
+        <div class="row mb-3">
+            <div class="col">
+                <label for="restricoes">Restrições</label>
+                <textarea class="form-control p-2" name="restricoes" id="restricoes" placeholder="2x1 + 3x2 - 4x3"
+                    rows="4">x_1 + 2x_2 - 3x_3 \leq 10
+-2x_1 + 3x_3 \geq 15
+x_1 + 2x_2 = 8</textarea>
+            </div>
+            <div class="col d-flex flex-column">
+                <label> &nbsp; </label>
+                <div class="latex-preview bg-white h-100" id="LaTexRestricoes"> &nbsp; </div>
+            </div>
+        </div>
+
+        <!-- Botão Calcular -->
+        <div>
+            <button class="btn btn-primary w-100" id="calcular">Calcular</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./public/js/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/app.js"></script>
+</body>
+
+</html>
