@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from simplex_revisado import simplex_revisado
+from api.simplex_revisado import simplex_revisado
 import numpy as np
 
 app = Flask(__name__)

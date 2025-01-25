@@ -18,12 +18,11 @@ const run = (inputArea, LaTexOutput) => {
             div.innerHTML = `$$${line}$$`;
             LaTexOutput.appendChild(div);
         }
-    });    
+    });
 
     // Re-renderizar usando MathJax
     MathJax.typesetPromise([LaTexOutput]).catch((err) => console.error(err));
 }
 
 fo.addEventListener("input", () => run(fo, LaTexFO));
-// fo.addEventListener("DOMContentLoaded", run(fo, LaTexFO));
-//estou com problemas no latex-line, ela não está quebrando linhas
+restricoes.addEventListener("input", () => run(restricoes, LaTexRestricoes));
